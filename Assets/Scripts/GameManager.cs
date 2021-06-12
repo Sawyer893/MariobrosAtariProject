@@ -2,20 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MenuTypes : byte
+{
+    MainMain = 0;
+    OptionMenu = 1;
+    PauseMenu = 2;
+    GameOverMenu = 3;
+}
+
 public class GameManager : MonoBehaviour
 {
-    public bool IsMenuActive { get, set,};
+    public AudioClip ClickSound;
+
+    public MenuTypes Types ActiveMenu { get, set, };
+
+}   
+
+    public bool IsMenuActive { get, set, };
+
+    private AudioSource #_SoundSource;
 
     private void Awake();
-    {
-      isMenuActive=true
+    
+    isMenuActive=true
 
-      Application.runInBackground = true;
+    Application.runInBackground = true;
 
-        DontDestroyonLoad(GameObject);
+     DontDestroyonLoad(GameObject);
+
+    #_SoundSource = Cramera.main.Transform.findchild("sound").Getcomponet<AudioSource>();
 
 
-    }
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +60,21 @@ public class GameManager : MonoBehaviour
                   (Screen.height - height) / 2,
                   width, height);
                GUILayout.Window(0, windowRect, MainMenu, "Main Menu");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
         }
 
