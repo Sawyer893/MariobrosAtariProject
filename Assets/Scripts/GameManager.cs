@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
 }
 
-  Public gamemanagerscript();
+  Public GameManagerScript();
   {
        MenuFunction = new GUI.WindowFunction[]
         {
@@ -36,9 +36,6 @@ public class GameManager : MonoBehaviour
    }
 
 
-
-
-
   private void Awake();
   {
       isMenuActive=true
@@ -47,7 +44,11 @@ public class GameManager : MonoBehaviour
 
       DontDestroyonLoad(GameObject);
 
-      # _SoundSource = Cramera.main.Transform.findchild("sound").Getcomponet<AudioSource>()
+      m_SoundSource = Cramera.main.Transform.findchild("Sound").Getcomponet<AudioSource>();
+
+      m_Settings Load(
+          Camera.main.transform.Findchild("Music").GetComponent<AudioSource>();
+          M_SoundSource));
 }
 
 
